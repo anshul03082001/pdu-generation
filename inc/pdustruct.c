@@ -11,11 +11,11 @@
 #define UT_SUBSYS_MAX_LEN     5
 #define UT_MODEFLAG_ALLOC_BUF 0x1U
 
-typedef enum
-{UT_version}   
+typedef enum 
+{UT_version} UT_version ;
         
- typedef enum  
-  {UT_pdutype}
+ typedef enum
+  {FILE_DIRECTIVE=0,FILEDATA=1}PDUTYPE;
   
  typedef enum
  { UT_transmission_mode}
@@ -52,9 +52,10 @@ typedef enum
     
 
 typedef struct 
-{Unsigned int version : 3;}
+{UT_version : 3;
+
 typedef struct
-{Unsigned int PDU_type :1;}
+{UT_PDU_type :1;}
 typedef struct
 {Unsigned int direction : 1;}
 typedef struct
@@ -71,6 +72,7 @@ typedef struct
 {Unsigned int Length_of_entity_ids : 3;{
 typedef struct
 {Unsigned int Segment_metadata_flag : 1;}
+
 typedef struct
 {Unsigned int Length_of_Transaction_sequence_number : 3;}
 typedef struct
@@ -80,4 +82,32 @@ Unsigned int Transaction_sequence_number[];}
 typedef struct
 {Unsigned int Destination_entity_ID[];}
 return 0;
+
+
+
+
+typedef struct Books { char title[50]; char author[50]; char subject[100]; int book_id; };
+typedef struct {file_directive A; 
+transmission_mode trans_md;
+int length ;
+int entity_id;
+
+
+}
+pdu_header;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
